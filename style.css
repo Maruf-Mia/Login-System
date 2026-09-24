@@ -1,0 +1,343 @@
+/* ============================================
+   Northbeam Login — style.css
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-bg-start: #101b2d;
+  --color-bg-end:   #17273f;
+  --color-card:     #ffffff;
+  --color-ink:      #14213d;
+  --color-ink-soft: #5b6478;
+  --color-border:   #e3e6ee;
+  --color-accent:   #2f6fed;
+  --color-accent-dark: #2358c4;
+  --color-danger:   #d64545;
+
+  --radius-card: 18px;
+  --radius-field: 10px;
+
+  --shadow-card:
+    0 1px 2px rgba(16, 27, 45, 0.06),
+    0 12px 24px -8px rgba(16, 27, 45, 0.22),
+    0 32px 64px -24px rgba(16, 27, 45, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--color-ink);
+  background: radial-gradient(circle at 20% 20%, var(--color-bg-end), var(--color-bg-start) 65%);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Layout: center card vertically & horizontally ---------- */
+
+.login-wrap {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--color-card);
+  border: 1px solid rgba(16, 27, 45, 0.04);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 44px 38px 34px;
+}
+
+/* ---------- Brand ---------- */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Heading ---------- */
+
+h1 {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 7px;
+  letter-spacing: -0.02em;
+  font-feature-settings: "ss01" 1;
+}
+
+.subtitle {
+  margin: 0 0 30px;
+  color: var(--color-ink-soft);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+/* ---------- Form fields ---------- */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: -0.005em;
+}
+
+.field input {
+  width: 100%;
+  font-family: inherit;
+  font-size: 14.5px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-field);
+  background: #fafbfd;
+  color: var(--color-ink);
+  box-shadow: inset 0 1px 2px rgba(16, 27, 45, 0.03);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.field input::placeholder {
+  color: #a4abbd;
+}
+
+.field input:hover {
+  border-color: #c7cde0;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(47, 111, 237, 0.13);
+}
+
+/* ---------- Remember me / forgot password row ---------- */
+
+.field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -4px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--color-ink-soft);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.link-muted {
+  font-size: 13.5px;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.link-muted:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.link-muted:focus-visible,
+.link-accent:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ---------- Button ---------- */
+
+.btn-primary {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-dark));
+  border: none;
+  border-radius: var(--radius-field);
+  padding: 13px 16px;
+  margin-top: 6px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(35, 88, 196, 0.15), 0 8px 16px -6px rgba(35, 88, 196, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 0 2px 4px rgba(35, 88, 196, 0.18), 0 12px 22px -6px rgba(35, 88, 196, 0.48);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  filter: brightness(0.98);
+  box-shadow: 0 1px 2px rgba(35, 88, 196, 0.2);
+}
+
+.btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(47, 111, 237, 0.28);
+}
+
+/* ---------- Footer text ---------- */
+
+.signup-text {
+  text-align: center;
+  margin: 24px 0 0;
+  font-size: 13.5px;
+  color: var(--color-ink-soft);
+}
+
+.link-accent {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-accent:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+
+/* ============================================
+   Responsive layout
+   Desktop:  1025px and up  (default styles above)
+   Tablet:   601px – 1024px
+   Mobile:   600px and below
+   ============================================ */
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+  .login-wrap {
+    padding: 32px 20px;
+  }
+
+  .login-card {
+    max-width: 420px;
+    padding: 40px 34px 30px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .login-wrap {
+    padding: 20px 16px;
+    align-items: flex-start;
+    padding-top: 48px;
+  }
+
+  .login-card {
+    max-width: 100%;
+    padding: 30px 22px 24px;
+    border-radius: 14px;
+  }
+
+  .brand {
+    margin-bottom: 22px;
+  }
+
+  h1 {
+    font-size: 21px;
+  }
+
+  .subtitle {
+    margin-bottom: 22px;
+  }
+
+  .login-form {
+    gap: 16px;
+  }
+
+  .field input,
+  .btn-primary {
+    font-size: 16px; /* prevents iOS auto-zoom on focus */
+  }
+}
+
+/* ---------- Small mobile ---------- */
+@media (max-width: 360px) {
+  .login-wrap {
+    padding: 14px;
+    padding-top: 36px;
+  }
+
+  .login-card {
+    padding: 24px 16px 20px;
+  }
+
+  .field-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

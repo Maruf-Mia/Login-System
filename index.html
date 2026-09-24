@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In · PiHR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="login-wrap">
+    <section class="login-card" aria-labelledby="login-heading">
+
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"> P </span>
+        <span class="brand-name">PiHR</span>
+      </div>
+
+      <h1 id="login-heading">Welcome back</h1>
+      <p class="subtitle">Sign in to continue to your account</p>
+
+      <form class="login-form" action="#" method="post">
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <div class="field-row">
+          <label class="checkbox">
+            <input type="checkbox" id="remember" name="remember">
+            <span>Remember me</span>
+          </label>
+
+          <a href="#" class="link-muted">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-primary">Log in</button>
+
+      </form>
+
+      <p class="signup-text">
+        Don't have an account? <a href="#" class="link-accent">Create one</a>
+      </p>
+
+    </section>
+  </main>
+
+</body>
+</html>
